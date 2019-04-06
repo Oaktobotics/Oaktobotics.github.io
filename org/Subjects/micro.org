@@ -1,5 +1,0 @@
-#+TITLE: Micro-Masters
-#+AUTHOR: 2019 Software Team 
-#+OPTION: TEX: t
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/ReadTheOrg.setup
-
