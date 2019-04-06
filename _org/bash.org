@@ -1,0 +1,16 @@
+#+TITLE: Foobar
+#+AUTHOR: BizBazz
+#+OPTION: TEX:t
+
+
+* Foobar
+*Foobar*
+_Foobar_
+/Foobar/
+[[/home/jacob/Workspaces/RMC/documentation/index.org][Foobar]]
+
+
+
+#+BEGIN_SRC elisp
+(+ 1 1)
+#+END_SRC

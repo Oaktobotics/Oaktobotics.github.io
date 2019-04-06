@@ -1,0 +1,73 @@
+#+TITLE: Learn Linux because -i sed so 
+#+AUTHOR: 2019 Software Team 
+#+OPTION: TEX: t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+
+* Installation
+* Usage
+** Bash
+*** Basic Commands 
+**** Navigate file structure
+***** ls  (list files in directory)
+#+begin_src shell
+ls 
+#+end_src
+***** cd  (change directory)
+***** clear (clear terminal display)
+***** find (find stuff)
+**** Mutate file structure
+***** mv  (move file)
+***** cp  (copy)
+***** rm  (remove)
+***** ln  (link)
+**** bash vars
+***** export (export a variable to the environment ( used for PATH a lot))
+***** alias (create an alias for a bash expression)
+**** text utilities
+***** grep (regex search through text)
+***** wc ( word line char count)
+
+**** Network management
+***** ip (networking information, and configuration)
+**** permissions management
+***** su (switch user (default is root))
+***** sudo (execute command with root privileges)
+***** adduser ( user profile management (create users, add them to groups, etc)
+***** chmod  (modify file ownership)
+
+*** Pipes, i.e. Linux-DuctTape , and more bash syntax
+*** WildCards / Patterns
+*** Path variables
+*** Configuration Files
+*** Scripts
+** File Structure
+   A grand tour of who's who in the linux file system 
+*** /    
+Contains everything , don't do 
+#+begin_src shell
+rm -rf /
+#+end_src
+*** /dev 
+Contains device and io files, your usb devices, serial connections, spi connections communicate with linux through these. Might need to play around with permissions here on occasion
+the vaunted stdout/stdin files live here
+*** /etc
+Contains system configuration files 
+  the hosts(ip masks and stuff) sudoers(who has what administrative privaleges) files are here along with lots of others, such as many systemwide systemD scripts
+*** /opt
+Ros lives here once installed. opt is kind of like an appendix. most user software is installed in /usr/local{/share}
+*** /usr
+ most system software , your linux utilities, c++ stl headers, etc live here
+**** /bin 
+where the executables live
+**** /lib 
+where the linkables live
+**** /include
+where the headers lives 
+
+*** /usr/local
+Where globally available user-level software lives ( in theory ) 
+**** tldr /bin /lib /include
+
+** Users , Permissions
+
+

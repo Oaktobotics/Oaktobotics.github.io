@@ -1,0 +1,15 @@
+#+TITLE: Readme
+#+AUTHOR: Oaktobotics Software (2019)
+
+
+* Setting up org-mode publishing
+** Installing Emacs
+** Configuration
+*** Init File
+*** Html Publishing
+** Hosting on Github Pages
+* Setup example screencast
+[[www.sit/index.html][SiteLink]]
+
+
+
