@@ -11,6 +11,8 @@
 * [[file:_images/mind_blown.png][Mind Blown]]
 #+begin_src scheme :exports code
 (define Y
-  (lambda ( le)
+  (lambda (le)
     ((lambda (f) (f f))
+      (lambda (f)
+        (le (lambda (x) ((f f) x)))))))
 #+end_src
