@@ -1,10 +1,11 @@
 #+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+#+TITLE:Oaktobotics
+[[file:_images/team.png]]
 
-[[file:2019-3-30-hello-world.html][Hello World]]
-[[file:2019-4-30-bash.html][bash]]
-[[file:2019-4-30-linux.html][linux]]
-[[file:2019-4-30-micro.html][micro]]
-[[file:2019-4-30-python.html][python.html]]
-[[file:2019-4-30-ros.html][ros]]
-
+* [[./electrical/electrical.org][Electrical]]
+* [[./mechanical/mechanical.org][Mechanical]]
+* [[./systems/systems.org][Systems]]
+* [[./outreach/outreach.org][Outreach ]]
+* [[./software/software.org][Software ]]
+  

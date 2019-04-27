@@ -1,6 +1,12 @@
 #+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
-#+TITLE: The Eelectrical Echelon
+#+TITLE: The Systems Sect
 
 
-* [[https://1drv.ms/f/s!AjSP-9Pgp1JIoUgGx_BjHrVBBVfy][OneDrive File Repository]]
+* about
+* Current Work
+  - [[file:_files/paper.docx][Systems Paper]]
+  - [[file:_files/presentation.ppt][Systems Presentation]]
+
+
+ 
