@@ -1,5 +1,5 @@
-#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:./_css/solarized-css/org-info.min.js
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./_css/solarized-dark.min.css" />
+#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:_css/solarized-css/org-info.min.js
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="_css/solarized-dark.min.css" />
 #+TITLE: ROS_tafarian nation
 
 
@@ -89,7 +89,7 @@ catkin_create_pkg first_package rospy        std_msgs
 #+end_src
 
 the most common language api's for ros are rospy and roscpp, albeit many others exist (matlab, java, lua , etc.)
-most of the other packages give you message types : std_msgs , geometry_msgs, tf2 , etc. 
+most of the other packages give you message types : std\_msgs , geometry\_msgs, tf2 , etc. 
 
 
 
