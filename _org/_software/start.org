@@ -1,0 +1,12 @@
+#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+#+TITLE: What do you need to know to Contribute? 
+
+| item                                 | necessity | why                                                                                                                                            |
+| [[./linux.org][Basic Linux Usage]]   | !!!       | Linux is your development environment. You need to navigate it competently (administration, shell usage                                        |
+| [[./python.org][Python Programming]] | !!!       | Most of our code base is python based, it is by far the least pain full way to implement modules with ROS                                      |
+| [[./ros.org][ROS]]                   | !!!       | On a macro scale ROS provides the infrastructure or our software, you need to understand its fundamentals to make any meaningfull contribution |
+| [[./git.org][ git/github]]           | !!!       | All of our code is on github, for your contributions to materialize, you need to be conversant with git                                        |
+| TBD                                  | TBD       | TBD                                                                                                                                            |
+
+

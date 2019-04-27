@@ -3,9 +3,9 @@
 #+TITLE:Oaktobotics
 [[file:_images/team.png]]
 
-* [[./electrical/electrical.org][Electrical]]
-* [[./mechanical/mechanical.org][Mechanical]]
-* [[./systems/systems.org][Systems]]
-* [[./outreach/outreach.org][Outreach ]]
-* [[./software/software.org][Software ]]
+* [[./electrical.org][Electrical]]
+* [[./mechanical.org][Mechanical]]
+* [[./systems.org][Systems]]
+* [[./pr.org][Outreach ]]
+* [[./software.org][Software ]]
   
