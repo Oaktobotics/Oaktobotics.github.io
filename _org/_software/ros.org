@@ -96,3 +96,9 @@ most of the other packages give you message types : std\_msgs , geometry\_msgs, 
 
 
 
+*** 
+#+begin_src shell
+catkin_make  
+#+end_src
+if you're compiling on a resource limited platform like a raspberry pi, it might be usefull
+to use -j <number of cores> -l <number of processes> to prevent it from freezing up
