@@ -8,7 +8,7 @@
   Actualizing the second order potentiality of GERTIES organs
 * Grand Tour
   Click [[./_software/start.org][Here]] if you're new
-* [[file:_images/mind_blown.png][Mind Blown]
+* [[file:_images/mind_blown.png][Mind Blown]]
 #+begin_src scheme :exports code
 (define Y
   (lambda ( le)
