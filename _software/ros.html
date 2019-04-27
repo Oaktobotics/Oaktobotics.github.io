@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-04-27 Sat 15:40 -->
+<!-- 2019-04-27 Sat 17:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>_ROS<sub>tafarian</sub> nation</title>
+<title>ROS<sub>tafarian</sub> nation</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Oatkobotics Software(2019)" />
 <style type="text/css">
@@ -312,14 +312,254 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">_ROS<sub>tafarian</sub> nation</h1>
+<h1 class="title">ROS<sub>tafarian</sub> nation</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5f6c846">1. Installation</a>
+<ul>
+<li><a href="#org59655d6">1.1. Preliminary considerations</a></li>
+<li><a href="#orgac04986">1.2. The Process (Melodic Morenia on ubuntu 18.04LTS)</a>
+<ul>
+<li><a href="#orgd9f0b05">1.2.1. set up the software sources for apt</a></li>
+<li><a href="#org8b39057">1.2.2. install basic packages</a></li>
+<li><a href="#orgc9a1b88">1.2.3. initialize ros environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2218f10">2. Workspaces</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgdccfb6b">2.0.1. Initialization</a>
+<ul>
+<li><a href="#org12056cb">2.0.1.1. workspace structure</a>
+<ul>
+<li><a href="#orgdda6027">2.0.1.1.1. build</a></li>
+<li><a href="#org39d24eb">2.0.1.1.2. devel</a></li>
+<li><a href="#org210bc0a">2.0.1.1.3. src</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0ce290b">2.0.2. Adding packages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org5f6c846" class="outline-2">
+<h2 id="org5f6c846"><span class="section-number-2">1</span> Installation</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Installing ros is  a "relatively" painless process, the ros <a href="http://wiki.ros.org">website</a> 
+has instructions, but we'll go through the process here.
+</p>
+</div>
+
+<div id="outline-container-org59655d6" class="outline-3">
+<h3 id="org59655d6"><span class="section-number-3">1.1</span> Preliminary considerations</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>you can chose a number of different operating systems, but ubuntu and debian
+have the best support <i>by far</i></li>
+<li>you need to <b>MAKE SURE</b> your <b>SUBVERSION</b> of ubuntu matches with the version of ROS
+that you're installing. otherwise you'll have big issues installing things. As 
+of this documents writing, you can't do ROS melodic on ubuntu 18.10 for exampe</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac04986" class="outline-3">
+<h3 id="orgac04986"><span class="section-number-3">1.2</span> The Process (Melodic Morenia on ubuntu 18.04LTS)</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-orgd9f0b05" class="outline-4">
+<h4 id="orgd9f0b05"><span class="section-number-4">1.2.1</span> set up the software sources for apt</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<div class="org-src-container">
+<pre class="src src-shell">sudo sh -c <span style="color: #2d9574;">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>;
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key <span style="color: #a45bad;">421C365BD9FF1F717815A3895523BAEEB01FA116</span>;
+sudo apt update
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b39057" class="outline-4">
+<h4 id="org8b39057"><span class="section-number-4">1.2.2</span> install basic packages</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>if you want gazebo install ros-&lt;dist&gt;-desktop-full</li>
+<li>if you don't want gazebo bloat, ros-&lt;dist&gt;-desktop</li>
+<li>if you're just using the packages from the software repo do ros-&lt;dist&gt;-ros-base</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">sudo apt-get install ros-melodic-desktop
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc9a1b88" class="outline-4">
+<h4 id="orgc9a1b88"><span class="section-number-4">1.2.3</span> initialize ros environment</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+ros packages rely on lots of symlinking &#x2013; =-( &#x2013; to work, so you need to do some setup work. 
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo rosdep init; 
+rosdep update;
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">it is important that you don't use sudo for the update</span>
+
+<span style="color: #4f97d7;">echo</span> <span style="color: #2d9574;">"source /opt/ros/melodic/setup.bash"</span> &gt;&gt; ~/.bashrc;
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">depends on what your shell is, ros supports sh bash and zsh</span>
+<span style="color: #4f97d7;">source</span> ~/.bashrc
+
+sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">additional dependancies for building packages</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2218f10" class="outline-2">
+<h2 id="org2218f10"><span class="section-number-2">2</span> Workspaces</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgdccfb6b" class="outline-4">
+<h4 id="orgdccfb6b"><span class="section-number-4">2.0.1</span> Initialization</h4>
+<div class="outline-text-4" id="text-2-0-1">
+<p>
+All of our ros code is organized functionally as a project within <i>catkin</i> workspaces.
+Basically we need to organize our code this way so that ros can properly link all of the 
+generated code it produces, and know where all the executables / launch files are
+</p>
+
+<p>
+to make the workspace invoke
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #4f97d7;">cd</span>;
+mkdir -p catkin_ws/src
+catkin_make 
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">this is ROSs ugly mutant version of cmake </span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org12056cb" class="outline-5">
+<h5 id="org12056cb"><span class="section-number-5">2.0.1.1</span> workspace structure</h5>
+<div class="outline-text-5" id="text-2-0-1-1">
+<p>
+you'll notice that  now we have two additional directories: devel and build.
+</p>
+</div>
+
+<div id="outline-container-orgdda6027" class="outline-6">
+<h6 id="orgdda6027"><span class="section-number-6">2.0.1.1.1</span> build</h6>
+<div class="outline-text-6" id="text-2-0-1-1-1">
+<p>
+build is our cmake build directory so it doesn't really have anything interesting
+(that is unless you modify the cmake file to give you autocompletion).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org39d24eb" class="outline-6">
+<h6 id="org39d24eb"><span class="section-number-6">2.0.1.1.2</span> devel</h6>
+<div class="outline-text-6" id="text-2-0-1-1-2">
+<p>
+on the other hand, devel contains <span class="underline"><i>all the code that ros generates from your packages</i></span> 
+one of the features of ros is that you can communicate seamlessly between the nodes using a standard interface, that is why when you define your own "messages" and "services" ros generates code for them). 
+</p>
+
+<ul class="org-ul">
+<li>If you want to see ros' prepackaged message and service defintions go to: 
+<ul class="org-ul">
+<li>/opt/ros/melodic/include for c++</li>
+<li>and <i>opt/ros/melodic/lib/python2.7/dist-packages</i> for python.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org210bc0a" class="outline-6">
+<h6 id="org210bc0a"><span class="section-number-6">2.0.1.1.3</span> src</h6>
+<div class="outline-text-6" id="text-2-0-1-1-3">
+<p>
+contains all your user defined packages
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0ce290b" class="outline-4">
+<h4 id="org0ce290b"><span class="section-number-4">2.0.2</span> Adding packages</h4>
+<div class="outline-text-4" id="text-2-0-2">
+<p>
+Lets make our first catkin package =) 
+</p>
+
+<p>
+first enter the src directory
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #4f97d7;">cd</span> ~/catkin_ws/src
+</pre>
+</div>
+
+<p>
+to create a project from a template invoke \(\ldots\)
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">
+catkin_create_pkg first_package rospy        std_msgs
+<span style="color: #2aa1ae; background-color: #292e34;">#                 </span><span style="color: #2aa1ae; background-color: #292e34;">name of pkg   lang lib       additional packages </span>
+</pre>
+</div>
+
+<p>
+the most common language api's for ros are rospy and roscpp, albeit many others exist (matlab, java, lua , etc.)
+most of the other packages give you message types : std<sub>msgs</sub> , geometry<sub>msgs</sub>, tf2 , etc. 
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Oatkobotics Software(2019)</p>
-<p class="date">Created: 2019-04-27 Sat 15:40</p>
+<p class="date">Created: 2019-04-27 Sat 17:30</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

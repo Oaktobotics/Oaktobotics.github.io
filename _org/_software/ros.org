@@ -1,3 +1,98 @@
-#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
-#+TITLE: _ROS_tafarian nation
+#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:./_css/solarized-css/org-info.min.js
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./_css/solarized-dark.min.css" />
+#+TITLE: ROS_tafarian nation
+
+
+* Installation
+  Installing ros is  a "relatively" painless process, the ros [[http://wiki.ros.org][website]] 
+  has instructions, but we'll go through the process here.
+
+** Preliminary considerations
+   - you can chose a number of different operating systems, but ubuntu and debian
+     have the best support /by far/
+   - you need to *MAKE SURE* your *SUBVERSION* of ubuntu matches with the version of ROS
+     that you're installing. otherwise you'll have big issues installing things. As 
+     of this documents writing, you can't do ROS melodic on ubuntu 18.10 for exampe
+** The Process (Melodic Morenia on ubuntu 18.04LTS)
+*** set up the software sources for apt 
+#+begin_src shell :exports code
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list';
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116;
+sudo apt update
+#+end_src
+
+*** install basic packages
+     - if you want gazebo install ros-<dist>-desktop-full
+     - if you don't want gazebo bloat, ros-<dist>-desktop
+     - if you're just using the packages from the software repo do ros-<dist>-ros-base
+#+begin_src shell :exports code
+sudo apt-get install ros-melodic-desktop
+#+end_src 
+*** initialize ros environment
+    ros packages rely on lots of symlinking -- =-( -- to work, so you need to do some setup work. 
+#+begin_src shell :exports code
+sudo rosdep init; 
+rosdep update;
+# it is important that you don't use sudo for the update
+
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc;
+# depends on what your shell is, ros supports sh bash and zsh
+source ~/.bashrc
+
+sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+# additional dependancies for building packages
+#+end_src
+
+* Workspaces
+*** Initialization
+All of our ros code is organized functionally as a project within /catkin/ workspaces.
+Basically we need to organize our code this way so that ros can properly link all of the 
+generated code it produces, and know where all the executables / launch files are
+
+to make the workspace invoke
+#+begin_src shell
+cd;
+mkdir -p catkin_ws/src
+catkin_make 
+## this is ROSs ugly mutant version of cmake 
+#+end_src
+
+**** workspace structure
+you'll notice that  now we have two additional directories: devel and build.
+
+***** build  
+build is our cmake build directory so it doesn't really have anything interesting
+(that is unless you modify the cmake file to give you autocompletion).
+
+***** devel
+on the other hand, devel contains _/all the code that ros generates from your packages/_ 
+one of the features of ros is that you can communicate seamlessly between the nodes using a standard interface, that is why when you define your own "messages" and "services" ros generates code for them). 
+
+  - If you want to see ros' prepackaged message and service defintions go to: 
+      - /opt/ros/melodic/include for c++
+      - and /opt/ros/melodic/lib/python2.7/dist-packages/ for python.
+***** src 
+contains all your user defined packages
+*** Adding packages
+Lets make our first catkin package =) 
+
+first enter the src directory
+#+begin_src shell
+cd ~/catkin_ws/src
+#+end_src
+
+to create a project from a template invoke $\ldots$
+#+begin_src sh
+
+catkin_create_pkg first_package rospy        std_msgs
+#                 name of pkg   lang lib       additional packages 
+#+end_src
+
+the most common language api's for ros are rospy and roscpp, albeit many others exist (matlab, java, lua , etc.)
+most of the other packages give you message types : std_msgs , geometry_msgs, tf2 , etc. 
+
+
+
+
+
+
