@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-04-27 Sat 17:47 -->
+<!-- 2019-05-03 Fri 13:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ROS<sub>tafarian</sub> nation</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Oatkobotics Software(2019)" />
+<meta name="author" content="jacob" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -193,15 +193,15 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="_css/solarized-dark.min.css" />
+<link rel="stylesheet" type="text/css" href="../_css/solarized-dark.min.css" />
 
-<script type="text/javascript" src="_css/solarized-css/org-info.min.js">
+<script type="text/javascript" src="../_css/solarized-css/org-info.min.js">
 /**
  *
- * @source: _css/solarized-css/org-info.min.js
+ * @source: ../_css/solarized-css/org-info.min.js
  *
  * @licstart  The following is the entire license notice for the
- *  JavaScript code in _css/solarized-css/org-info.min.js.
+ *  JavaScript code in ../_css/solarized-css/org-info.min.js.
  *
  * Copyright (C) 2012-2019 Free Software Foundation, Inc.
  *
@@ -221,7 +221,7 @@
  * through which recipients can access the Corresponding Source.
  *
  * @licend  The above is the entire license notice
- * for the JavaScript code in _css/solarized-css/org-info.min.js.
+ * for the JavaScript code in ../_css/solarized-css/org-info.min.js.
  *
  */
 </script>
@@ -254,7 +254,7 @@ for the JavaScript code in this tag.
 */
 
 <!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "999");
+org_html_manager.set("TOC_DEPTH", "4");
 org_html_manager.set("LINK_HOME", "");
 org_html_manager.set("LINK_UP", "");
 org_html_manager.set("LOCAL_TOC", "1");
@@ -342,34 +342,29 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5f6c846">1. Installation</a>
+<li><a href="#orgcdfa012">1. Installation</a>
 <ul>
-<li><a href="#org59655d6">1.1. Preliminary considerations</a></li>
-<li><a href="#orgac04986">1.2. The Process (Melodic Morenia on ubuntu 18.04LTS)</a>
+<li><a href="#org25c28d3">1.1. Preliminary considerations</a></li>
+<li><a href="#orgae82d3d">1.2. The Process (Melodic Morenia on ubuntu 18.04LTS)</a>
 <ul>
-<li><a href="#orgd9f0b05">1.2.1. set up the software sources for apt</a></li>
-<li><a href="#org8b39057">1.2.2. install basic packages</a></li>
-<li><a href="#orgc9a1b88">1.2.3. initialize ros environment</a></li>
+<li><a href="#org01c24f7">1.2.1. set up the software sources for apt</a></li>
+<li><a href="#orgf933294">1.2.2. install basic packages</a></li>
+<li><a href="#org5311d75">1.2.3. initialize ros environment</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org2218f10">2. Workspaces</a>
+<li><a href="#orgbceb8e0">2. Workspaces</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgdccfb6b">2.0.1. Initialization</a>
+<li><a href="#orgc7bc6c7">2.0.1. Initialization</a>
 <ul>
-<li><a href="#org12056cb">2.0.1.1. workspace structure</a>
-<ul>
-<li><a href="#orgdda6027">2.0.1.1.1. build</a></li>
-<li><a href="#org39d24eb">2.0.1.1.2. devel</a></li>
-<li><a href="#org210bc0a">2.0.1.1.3. src</a></li>
+<li><a href="#org5bf9310">2.0.1.1. workspace structure</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#org0ce290b">2.0.2. Adding packages</a></li>
+<li><a href="#orgaf3e868">2.0.2. Adding packages</a></li>
+<li><a href="#orgb599068">2.0.3. </a></li>
 </ul>
 </li>
 </ul>
@@ -379,8 +374,8 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-org5f6c846" class="outline-2">
-<h2 id="org5f6c846"><span class="section-number-2">1</span> Installation</h2>
+<div id="outline-container-orgcdfa012" class="outline-2">
+<h2 id="orgcdfa012"><span class="section-number-2">1</span> Installation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Installing ros is  a "relatively" painless process, the ros <a href="http://wiki.ros.org">website</a> 
@@ -388,8 +383,8 @@ has instructions, but we'll go through the process here.
 </p>
 </div>
 
-<div id="outline-container-org59655d6" class="outline-3">
-<h3 id="org59655d6"><span class="section-number-3">1.1</span> Preliminary considerations</h3>
+<div id="outline-container-org25c28d3" class="outline-3">
+<h3 id="org25c28d3"><span class="section-number-3">1.1</span> Preliminary considerations</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>you can chose a number of different operating systems, but ubuntu and debian
@@ -400,15 +395,15 @@ of this documents writing, you can't do ROS melodic on ubuntu 18.10 for exampe</
 </ul>
 </div>
 </div>
-<div id="outline-container-orgac04986" class="outline-3">
-<h3 id="orgac04986"><span class="section-number-3">1.2</span> The Process (Melodic Morenia on ubuntu 18.04LTS)</h3>
+<div id="outline-container-orgae82d3d" class="outline-3">
+<h3 id="orgae82d3d"><span class="section-number-3">1.2</span> The Process (Melodic Morenia on ubuntu 18.04LTS)</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-orgd9f0b05" class="outline-4">
-<h4 id="orgd9f0b05"><span class="section-number-4">1.2.1</span> set up the software sources for apt</h4>
+<div id="outline-container-org01c24f7" class="outline-4">
+<h4 id="org01c24f7"><span class="section-number-4">1.2.1</span> set up the software sources for apt</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <div class="org-src-container">
-<pre class="src src-shell">sudo sh -c <span style="color: #2d9574;">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>;
+<pre class="src src-shell">sudo sh -c <span style="color: #2d9574;">'echo "deb http://packages.ros.org/ros/ubuntu $(</span><span style="color: #fa8072;">lsb_release</span><span style="color: #2d9574;"> -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>;
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key <span style="color: #a45bad;">421C365BD9FF1F717815A3895523BAEEB01FA116</span>;
 sudo apt update
 </pre>
@@ -416,8 +411,8 @@ sudo apt update
 </div>
 </div>
 
-<div id="outline-container-org8b39057" class="outline-4">
-<h4 id="org8b39057"><span class="section-number-4">1.2.2</span> install basic packages</h4>
+<div id="outline-container-orgf933294" class="outline-4">
+<h4 id="orgf933294"><span class="section-number-4">1.2.2</span> install basic packages</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>if you want gazebo install ros-&lt;dist&gt;-desktop-full</li>
@@ -430,8 +425,8 @@ sudo apt update
 </div>
 </div>
 </div>
-<div id="outline-container-orgc9a1b88" class="outline-4">
-<h4 id="orgc9a1b88"><span class="section-number-4">1.2.3</span> initialize ros environment</h4>
+<div id="outline-container-org5311d75" class="outline-4">
+<h4 id="org5311d75"><span class="section-number-4">1.2.3</span> initialize ros environment</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 ros packages rely on lots of symlinking &#x2013; =-( &#x2013; to work, so you need to do some setup work. 
@@ -454,12 +449,12 @@ sudo apt install python-rosinstall python-rosinstall-generator python-wstool bui
 </div>
 </div>
 
-<div id="outline-container-org2218f10" class="outline-2">
-<h2 id="org2218f10"><span class="section-number-2">2</span> Workspaces</h2>
+<div id="outline-container-orgbceb8e0" class="outline-2">
+<h2 id="orgbceb8e0"><span class="section-number-2">2</span> Workspaces</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgdccfb6b" class="outline-4">
-<h4 id="orgdccfb6b"><span class="section-number-4">2.0.1</span> Initialization</h4>
+<div id="outline-container-orgc7bc6c7" class="outline-4">
+<h4 id="orgc7bc6c7"><span class="section-number-4">2.0.1</span> Initialization</h4>
 <div class="outline-text-4" id="text-2-0-1">
 <p>
 All of our ros code is organized functionally as a project within <i>catkin</i> workspaces.
@@ -479,26 +474,25 @@ catkin_make
 </div>
 </div>
 
-<div id="outline-container-org12056cb" class="outline-5">
-<h5 id="org12056cb"><span class="section-number-5">2.0.1.1</span> workspace structure</h5>
+<div id="outline-container-org5bf9310" class="outline-5">
+<h5 id="org5bf9310"><span class="section-number-5">2.0.1.1</span> workspace structure</h5>
 <div class="outline-text-5" id="text-2-0-1-1">
 <p>
 you'll notice that  now we have two additional directories: devel and build.
 </p>
 </div>
 
-<div id="outline-container-orgdda6027" class="outline-6">
-<h6 id="orgdda6027"><span class="section-number-6">2.0.1.1.1</span> build</h6>
+<ol class="org-ol">
+<li><a id="org9d9ca9c"></a>build<br />
 <div class="outline-text-6" id="text-2-0-1-1-1">
 <p>
 build is our cmake build directory so it doesn't really have anything interesting
 (that is unless you modify the cmake file to give you autocompletion).
 </p>
 </div>
-</div>
+</li>
 
-<div id="outline-container-org39d24eb" class="outline-6">
-<h6 id="org39d24eb"><span class="section-number-6">2.0.1.1.2</span> devel</h6>
+<li><a id="orga9681d2"></a>devel<br />
 <div class="outline-text-6" id="text-2-0-1-1-2">
 <p>
 on the other hand, devel contains <span class="underline"><i>all the code that ros generates from your packages</i></span> 
@@ -513,19 +507,19 @@ one of the features of ros is that you can communicate seamlessly between the no
 </ul></li>
 </ul>
 </div>
-</div>
-<div id="outline-container-org210bc0a" class="outline-6">
-<h6 id="org210bc0a"><span class="section-number-6">2.0.1.1.3</span> src</h6>
+</li>
+<li><a id="org72158dc"></a>src<br />
 <div class="outline-text-6" id="text-2-0-1-1-3">
 <p>
 contains all your user defined packages
 </p>
 </div>
+</li>
+</ol>
 </div>
 </div>
-</div>
-<div id="outline-container-org0ce290b" class="outline-4">
-<h4 id="org0ce290b"><span class="section-number-4">2.0.2</span> Adding packages</h4>
+<div id="outline-container-orgaf3e868" class="outline-4">
+<h4 id="orgaf3e868"><span class="section-number-4">2.0.2</span> Adding packages</h4>
 <div class="outline-text-4" id="text-2-0-2">
 <p>
 Lets make our first catkin package =) 
@@ -555,11 +549,30 @@ most of the other packages give you message types : std\<sub>msgs</sub> , geomet
 </p>
 </div>
 </div>
+
+
+
+
+
+
+<div id="outline-container-orgb599068" class="outline-4">
+<h4 id="orgb599068"><span class="section-number-4">2.0.3</span> </h4>
+<div class="outline-text-4" id="text-2-0-3">
+<div class="org-src-container">
+<pre class="src src-shell">catkin_make  
+</pre>
+</div>
+<p>
+if you're compiling on a resource limited platform like a raspberry pi, it might be usefull
+to use -j &lt;number of cores&gt; -l &lt;number of processes&gt; to prevent it from freezing up
+</p>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Oatkobotics Software(2019)</p>
-<p class="date">Created: 2019-04-27 Sat 17:47</p>
+<p class="author">Author: jacob</p>
+<p class="date">Created: 2019-05-03 Fri 13:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

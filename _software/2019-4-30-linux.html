@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-04-27 Sat 15:40 -->
+<!-- 2019-05-03 Fri 13:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Learn Linux because -i sed so</title>
@@ -254,7 +254,7 @@ for the JavaScript code in this tag.
 */
 
 <!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "999");
+org_html_manager.set("TOC_DEPTH", "4");
 org_html_manager.set("LINK_HOME", "");
 org_html_manager.set("LINK_UP", "");
 org_html_manager.set("LOCAL_TOC", "1");
@@ -320,223 +320,167 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org821eb74">Installation</a></li>
-<li><a href="#orgeef43ce">Usage</a>
+<li><a href="#org7ccbbaa">Installation</a></li>
+<li><a href="#org6bc698a">Usage</a>
 <ul>
-<li><a href="#orgf486e13">Bash</a>
+<li><a href="#orga50598d">Bash</a>
 <ul>
-<li><a href="#orgdac1de6">Basic Commands</a>
+<li><a href="#orgd368aef">Basic Commands</a>
 <ul>
-<li><a href="#org7c464b6">Navigate file structure</a>
-<ul>
-<li><a href="#orga44b0c1">ls  (list files in directory)</a></li>
-<li><a href="#org248fa0b">cd  (change directory)</a></li>
-<li><a href="#orgfaf914a">clear (clear terminal display)</a></li>
-<li><a href="#orgf1cf5f2">find (find stuff)</a></li>
+<li><a href="#org5fd5f1d">Navigate file structure</a></li>
+<li><a href="#org933215c">Mutate file structure</a></li>
+<li><a href="#org1c5d46c">bash vars</a></li>
+<li><a href="#orga211a33">text utilities</a></li>
+<li><a href="#org9c2ef43">Network management</a></li>
+<li><a href="#org5f1ede8">permissions management</a></li>
 </ul>
 </li>
-<li><a href="#orgc0d50e1">Mutate file structure</a>
-<ul>
-<li><a href="#org4b0a5c5">mv  (move file)</a></li>
-<li><a href="#org973750f">cp  (copy)</a></li>
-<li><a href="#org5966cae">rm  (remove)</a></li>
-<li><a href="#orgb3c72e3">ln  (link)</a></li>
+<li><a href="#org8259b28">Pipes, i.e. Linux-DuctTape , and more bash syntax</a></li>
+<li><a href="#org9c8df66">WildCards / Patterns</a></li>
+<li><a href="#org8a48ca3">Path variables</a></li>
+<li><a href="#orga7d456c">Configuration Files</a></li>
+<li><a href="#org7e2b171">Scripts</a></li>
 </ul>
 </li>
-<li><a href="#orgc3e6882">bash vars</a>
+<li><a href="#org2f1120d">File Structure</a>
 <ul>
-<li><a href="#org33408ab">export (export a variable to the environment ( used for PATH a lot))</a></li>
-<li><a href="#org88222f2">alias (create an alias for a bash expression)</a></li>
+<li><a href="#org2bef3e5">/</a></li>
+<li><a href="#org52dd0d5">/dev</a></li>
+<li><a href="#orge9cb8d3">/etc</a></li>
+<li><a href="#orgf2d5541">/opt</a></li>
+<li><a href="#org0db3f52">/usr</a>
+<ul>
+<li><a href="#org2299693">/bin</a></li>
+<li><a href="#org828a1ba">/lib</a></li>
+<li><a href="#org7afc56e">/include</a></li>
 </ul>
 </li>
-<li><a href="#orgcf310cd">text utilities</a>
+<li><a href="#orgf675814">/usr/local</a>
 <ul>
-<li><a href="#org5b8a41c">grep (regex search through text)</a></li>
-<li><a href="#org2d594a5">wc ( word line char count)</a></li>
-</ul>
-</li>
-<li><a href="#org575d14f">Network management</a>
-<ul>
-<li><a href="#org7aeb4e4">ip (networking information, and configuration)</a></li>
-</ul>
-</li>
-<li><a href="#org869ea55">permissions management</a>
-<ul>
-<li><a href="#org0cf4063">su (switch user (default is root))</a></li>
-<li><a href="#orgc09f590">sudo (execute command with root privileges)</a></li>
-<li><a href="#orge3284a1">adduser ( user profile management (create users, add them to groups, etc)</a></li>
-<li><a href="#org5b38569">chmod  (modify file ownership)</a></li>
+<li><a href="#org9f64d64">tldr /bin /lib /include</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org07f5454">Pipes, i.e. Linux-DuctTape , and more bash syntax</a></li>
-<li><a href="#org5186c78">WildCards / Patterns</a></li>
-<li><a href="#org9e764e8">Path variables</a></li>
-<li><a href="#orgefd48f5">Configuration Files</a></li>
-<li><a href="#orgd992984">Scripts</a></li>
+<li><a href="#orga5ca8a2">Users , Permissions</a></li>
 </ul>
 </li>
-<li><a href="#org864da30">File Structure</a>
-<ul>
-<li><a href="#org446b087">/</a></li>
-<li><a href="#org1b36dbb">/dev</a></li>
-<li><a href="#org8551e4e">/etc</a></li>
-<li><a href="#orgee28381">/opt</a></li>
-<li><a href="#org20cf3c0">/usr</a>
-<ul>
-<li><a href="#org57377bf">/bin</a></li>
-<li><a href="#org1d2e2cb">/lib</a></li>
-<li><a href="#org05d836e">/include</a></li>
-</ul>
-</li>
-<li><a href="#org86b9fe7">/usr/local</a>
-<ul>
-<li><a href="#orgce1efe3">tldr /bin /lib /include</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org11311da">Users , Permissions</a></li>
-</ul>
-</li>
-<li><a href="#org60f78f4">Tutorial</a></li>
+<li><a href="#org857988e">Tutorial</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org821eb74" class="outline-2">
-<h2 id="org821eb74">Installation</h2>
+<div id="outline-container-org7ccbbaa" class="outline-2">
+<h2 id="org7ccbbaa">Installation</h2>
 </div>
-<div id="outline-container-orgeef43ce" class="outline-2">
-<h2 id="orgeef43ce">Usage</h2>
-<div class="outline-text-2" id="text-orgeef43ce">
+<div id="outline-container-org6bc698a" class="outline-2">
+<h2 id="org6bc698a">Usage</h2>
+<div class="outline-text-2" id="text-org6bc698a">
 </div>
-<div id="outline-container-orgf486e13" class="outline-3">
-<h3 id="orgf486e13">Bash</h3>
-<div class="outline-text-3" id="text-orgf486e13">
+<div id="outline-container-orga50598d" class="outline-3">
+<h3 id="orga50598d">Bash</h3>
+<div class="outline-text-3" id="text-orga50598d">
 </div>
-<div id="outline-container-orgdac1de6" class="outline-4">
-<h4 id="orgdac1de6">Basic Commands</h4>
-<div class="outline-text-4" id="text-orgdac1de6">
+<div id="outline-container-orgd368aef" class="outline-4">
+<h4 id="orgd368aef">Basic Commands</h4>
+<div class="outline-text-4" id="text-orgd368aef">
 </div>
-<div id="outline-container-org7c464b6" class="outline-5">
-<h5 id="org7c464b6">Navigate file structure</h5>
-<div class="outline-text-5" id="text-org7c464b6">
+<div id="outline-container-org5fd5f1d" class="outline-5">
+<h5 id="org5fd5f1d">Navigate file structure</h5>
+<div class="outline-text-5" id="text-org5fd5f1d">
 </div>
-<div id="outline-container-orga44b0c1" class="outline-6">
-<h6 id="orga44b0c1">ls  (list files in directory)</h6>
-<div class="outline-text-6" id="text-orga44b0c1">
+<ul class="org-ul">
+<li><a id="orgda37c95"></a>ls  (list files in directory)<br />
+<div class="outline-text-6" id="text-orgda37c95">
 <div class="org-src-container">
 <pre class="src src-shell">ls 
 </pre>
 </div>
 </div>
+</li>
+<li><a id="org716cb85"></a>cd  (change directory)<br /></li>
+<li><a id="org9171e60"></a>clear (clear terminal display)<br /></li>
+<li><a id="org6e73d38"></a>find (find stuff)<br /></li>
+</ul>
 </div>
-<div id="outline-container-org248fa0b" class="outline-6">
-<h6 id="org248fa0b">cd  (change directory)</h6>
+<div id="outline-container-org933215c" class="outline-5">
+<h5 id="org933215c">Mutate file structure</h5>
+<div class="outline-text-5" id="text-org933215c">
 </div>
-<div id="outline-container-orgfaf914a" class="outline-6">
-<h6 id="orgfaf914a">clear (clear terminal display)</h6>
+<ul class="org-ul">
+<li><a id="orgdf177ee"></a>mv  (move file)<br /></li>
+<li><a id="orgbeb3847"></a>cp  (copy)<br /></li>
+<li><a id="orgd352b97"></a>rm  (remove)<br /></li>
+<li><a id="org6526d56"></a>ln  (link)<br /></li>
+</ul>
 </div>
-<div id="outline-container-orgf1cf5f2" class="outline-6">
-<h6 id="orgf1cf5f2">find (find stuff)</h6>
+<div id="outline-container-org1c5d46c" class="outline-5">
+<h5 id="org1c5d46c">bash vars</h5>
+<div class="outline-text-5" id="text-org1c5d46c">
 </div>
+<ul class="org-ul">
+<li><a id="org4f3368b"></a>export (export a variable to the environment ( used for PATH a lot))<br /></li>
+<li><a id="org4bb6950"></a>alias (create an alias for a bash expression)<br /></li>
+</ul>
 </div>
-<div id="outline-container-orgc0d50e1" class="outline-5">
-<h5 id="orgc0d50e1">Mutate file structure</h5>
-<div class="outline-text-5" id="text-orgc0d50e1">
+<div id="outline-container-orga211a33" class="outline-5">
+<h5 id="orga211a33">text utilities</h5>
+<div class="outline-text-5" id="text-orga211a33">
 </div>
-<div id="outline-container-org4b0a5c5" class="outline-6">
-<h6 id="org4b0a5c5">mv  (move file)</h6>
+<ul class="org-ul">
+<li><a id="org03f0a67"></a>grep (regex search through text)<br /></li>
+<li><a id="org3c79d73"></a>wc ( word line char count)<br /></li>
+</ul>
 </div>
-<div id="outline-container-org973750f" class="outline-6">
-<h6 id="org973750f">cp  (copy)</h6>
+
+<div id="outline-container-org9c2ef43" class="outline-5">
+<h5 id="org9c2ef43">Network management</h5>
+<div class="outline-text-5" id="text-org9c2ef43">
 </div>
-<div id="outline-container-org5966cae" class="outline-6">
-<h6 id="org5966cae">rm  (remove)</h6>
+<ul class="org-ul">
+<li><a id="org19550fd"></a>ip (networking information, and configuration)<br /></li>
+</ul>
 </div>
-<div id="outline-container-orgb3c72e3" class="outline-6">
-<h6 id="orgb3c72e3">ln  (link)</h6>
+<div id="outline-container-org5f1ede8" class="outline-5">
+<h5 id="org5f1ede8">permissions management</h5>
+<div class="outline-text-5" id="text-org5f1ede8">
 </div>
-</div>
-<div id="outline-container-orgc3e6882" class="outline-5">
-<h5 id="orgc3e6882">bash vars</h5>
-<div class="outline-text-5" id="text-orgc3e6882">
-</div>
-<div id="outline-container-org33408ab" class="outline-6">
-<h6 id="org33408ab">export (export a variable to the environment ( used for PATH a lot))</h6>
-</div>
-<div id="outline-container-org88222f2" class="outline-6">
-<h6 id="org88222f2">alias (create an alias for a bash expression)</h6>
-</div>
-</div>
-<div id="outline-container-orgcf310cd" class="outline-5">
-<h5 id="orgcf310cd">text utilities</h5>
-<div class="outline-text-5" id="text-orgcf310cd">
-</div>
-<div id="outline-container-org5b8a41c" class="outline-6">
-<h6 id="org5b8a41c">grep (regex search through text)</h6>
-</div>
-<div id="outline-container-org2d594a5" class="outline-6">
-<h6 id="org2d594a5">wc ( word line char count)</h6>
+<ul class="org-ul">
+<li><a id="orgd181e53"></a>su (switch user (default is root))<br /></li>
+<li><a id="org8a21102"></a>sudo (execute command with root privileges)<br /></li>
+<li><a id="org5cc055a"></a>adduser ( user profile management (create users, add them to groups, etc)<br /></li>
+<li><a id="orgf1e1269"></a>chmod  (modify file ownership)<br /></li>
+</ul>
 </div>
 </div>
 
-<div id="outline-container-org575d14f" class="outline-5">
-<h5 id="org575d14f">Network management</h5>
-<div class="outline-text-5" id="text-org575d14f">
+<div id="outline-container-org8259b28" class="outline-4">
+<h4 id="org8259b28">Pipes, i.e. Linux-DuctTape , and more bash syntax</h4>
 </div>
-<div id="outline-container-org7aeb4e4" class="outline-6">
-<h6 id="org7aeb4e4">ip (networking information, and configuration)</h6>
+<div id="outline-container-org9c8df66" class="outline-4">
+<h4 id="org9c8df66">WildCards / Patterns</h4>
 </div>
+<div id="outline-container-org8a48ca3" class="outline-4">
+<h4 id="org8a48ca3">Path variables</h4>
 </div>
-<div id="outline-container-org869ea55" class="outline-5">
-<h5 id="org869ea55">permissions management</h5>
-<div class="outline-text-5" id="text-org869ea55">
+<div id="outline-container-orga7d456c" class="outline-4">
+<h4 id="orga7d456c">Configuration Files</h4>
 </div>
-<div id="outline-container-org0cf4063" class="outline-6">
-<h6 id="org0cf4063">su (switch user (default is root))</h6>
-</div>
-<div id="outline-container-orgc09f590" class="outline-6">
-<h6 id="orgc09f590">sudo (execute command with root privileges)</h6>
-</div>
-<div id="outline-container-orge3284a1" class="outline-6">
-<h6 id="orge3284a1">adduser ( user profile management (create users, add them to groups, etc)</h6>
-</div>
-<div id="outline-container-org5b38569" class="outline-6">
-<h6 id="org5b38569">chmod  (modify file ownership)</h6>
+<div id="outline-container-org7e2b171" class="outline-4">
+<h4 id="org7e2b171">Scripts</h4>
 </div>
 </div>
-</div>
-
-<div id="outline-container-org07f5454" class="outline-4">
-<h4 id="org07f5454">Pipes, i.e. Linux-DuctTape , and more bash syntax</h4>
-</div>
-<div id="outline-container-org5186c78" class="outline-4">
-<h4 id="org5186c78">WildCards / Patterns</h4>
-</div>
-<div id="outline-container-org9e764e8" class="outline-4">
-<h4 id="org9e764e8">Path variables</h4>
-</div>
-<div id="outline-container-orgefd48f5" class="outline-4">
-<h4 id="orgefd48f5">Configuration Files</h4>
-</div>
-<div id="outline-container-orgd992984" class="outline-4">
-<h4 id="orgd992984">Scripts</h4>
-</div>
-</div>
-<div id="outline-container-org864da30" class="outline-3">
-<h3 id="org864da30">File Structure</h3>
-<div class="outline-text-3" id="text-org864da30">
+<div id="outline-container-org2f1120d" class="outline-3">
+<h3 id="org2f1120d">File Structure</h3>
+<div class="outline-text-3" id="text-org2f1120d">
 <p>
 A grand tour of who's who in the linux file system 
 </p>
 </div>
-<div id="outline-container-org446b087" class="outline-4">
-<h4 id="org446b087">/</h4>
-<div class="outline-text-4" id="text-org446b087">
+<div id="outline-container-org2bef3e5" class="outline-4">
+<h4 id="org2bef3e5">/</h4>
+<div class="outline-text-4" id="text-org2bef3e5">
 <p>
 Contains everything , don't do 
 </p>
@@ -546,58 +490,58 @@ Contains everything , don't do
 </div>
 </div>
 </div>
-<div id="outline-container-org1b36dbb" class="outline-4">
-<h4 id="org1b36dbb">/dev</h4>
-<div class="outline-text-4" id="text-org1b36dbb">
+<div id="outline-container-org52dd0d5" class="outline-4">
+<h4 id="org52dd0d5">/dev</h4>
+<div class="outline-text-4" id="text-org52dd0d5">
 <p>
 Contains device and io files, your usb devices, serial connections, spi connections communicate with linux through these. Might need to play around with permissions here on occasion
 the vaunted stdout/stdin files live here
 </p>
 </div>
 </div>
-<div id="outline-container-org8551e4e" class="outline-4">
-<h4 id="org8551e4e">/etc</h4>
-<div class="outline-text-4" id="text-org8551e4e">
+<div id="outline-container-orge9cb8d3" class="outline-4">
+<h4 id="orge9cb8d3">/etc</h4>
+<div class="outline-text-4" id="text-orge9cb8d3">
 <p>
 Contains system configuration files 
   the hosts(ip masks and stuff) sudoers(who has what administrative privaleges) files are here along with lots of others, such as many systemwide systemD scripts
 </p>
 </div>
 </div>
-<div id="outline-container-orgee28381" class="outline-4">
-<h4 id="orgee28381">/opt</h4>
-<div class="outline-text-4" id="text-orgee28381">
+<div id="outline-container-orgf2d5541" class="outline-4">
+<h4 id="orgf2d5541">/opt</h4>
+<div class="outline-text-4" id="text-orgf2d5541">
 <p>
 Ros lives here once installed. opt is kind of like an appendix. most user software is installed in /usr/local{/share}
 </p>
 </div>
 </div>
-<div id="outline-container-org20cf3c0" class="outline-4">
-<h4 id="org20cf3c0">/usr</h4>
-<div class="outline-text-4" id="text-org20cf3c0">
+<div id="outline-container-org0db3f52" class="outline-4">
+<h4 id="org0db3f52">/usr</h4>
+<div class="outline-text-4" id="text-org0db3f52">
 <p>
 most system software , your linux utilities, c++ stl headers, etc live here
 </p>
 </div>
-<div id="outline-container-org57377bf" class="outline-5">
-<h5 id="org57377bf">/bin</h5>
-<div class="outline-text-5" id="text-org57377bf">
+<div id="outline-container-org2299693" class="outline-5">
+<h5 id="org2299693">/bin</h5>
+<div class="outline-text-5" id="text-org2299693">
 <p>
 where the executables live
 </p>
 </div>
 </div>
-<div id="outline-container-org1d2e2cb" class="outline-5">
-<h5 id="org1d2e2cb">/lib</h5>
-<div class="outline-text-5" id="text-org1d2e2cb">
+<div id="outline-container-org828a1ba" class="outline-5">
+<h5 id="org828a1ba">/lib</h5>
+<div class="outline-text-5" id="text-org828a1ba">
 <p>
 where the linkables live
 </p>
 </div>
 </div>
-<div id="outline-container-org05d836e" class="outline-5">
-<h5 id="org05d836e">/include</h5>
-<div class="outline-text-5" id="text-org05d836e">
+<div id="outline-container-org7afc56e" class="outline-5">
+<h5 id="org7afc56e">/include</h5>
+<div class="outline-text-5" id="text-org7afc56e">
 <p>
 where the headers lives 
 </p>
@@ -605,28 +549,28 @@ where the headers lives
 </div>
 </div>
 
-<div id="outline-container-org86b9fe7" class="outline-4">
-<h4 id="org86b9fe7">/usr/local</h4>
-<div class="outline-text-4" id="text-org86b9fe7">
+<div id="outline-container-orgf675814" class="outline-4">
+<h4 id="orgf675814">/usr/local</h4>
+<div class="outline-text-4" id="text-orgf675814">
 <p>
 Where globally available user-level software lives ( in theory ) 
 </p>
 </div>
-<div id="outline-container-orgce1efe3" class="outline-5">
-<h5 id="orgce1efe3">tldr /bin /lib /include</h5>
+<div id="outline-container-org9f64d64" class="outline-5">
+<h5 id="org9f64d64">tldr /bin /lib /include</h5>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org11311da" class="outline-3">
-<h3 id="org11311da">Users , Permissions</h3>
+<div id="outline-container-orga5ca8a2" class="outline-3">
+<h3 id="orga5ca8a2">Users , Permissions</h3>
 </div>
 </div>
 
 
-<div id="outline-container-org60f78f4" class="outline-2">
-<h2 id="org60f78f4">Tutorial</h2>
-<div class="outline-text-2" id="text-org60f78f4">
+<div id="outline-container-org857988e" class="outline-2">
+<h2 id="org857988e">Tutorial</h2>
+<div class="outline-text-2" id="text-org857988e">
 <div class="HTML">
 <p>
 &lt;script id="asciicast-jI76HWUnB8FEB4hP9PXCtvDNu" src="<a href="https://asciinema.org/a/jI76HWUnB8FEB4hP9PXCtvDNu.js">https://asciinema.org/a/jI76HWUnB8FEB4hP9PXCtvDNu.js</a>" async&gt;&lt;/script&gt;
@@ -638,7 +582,7 @@ Where globally available user-level software lives ( in theory )
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: 2019 Software Team</p>
-<p class="date">Created: 2019-04-27 Sat 15:40</p>
+<p class="date">Created: 2019-05-03 Fri 13:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

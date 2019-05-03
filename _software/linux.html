@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-04-27 Sat 15:40 -->
+<!-- 2019-05-03 Fri 13:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Learn Linux because -i sed so</title>
@@ -193,15 +193,15 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+<link rel="stylesheet" type="text/css" href="../_css/solarized-css/solarized-dark.min.css" />
 
-<script type="text/javascript" src="http://thomasf.github.io/solarized-css/org-info.min.js">
+<script type="text/javascript" src="../_css/_org-info.min.js">
 /**
  *
- * @source: http://thomasf.github.io/solarized-css/org-info.min.js
+ * @source: ../_css/_org-info.min.js
  *
  * @licstart  The following is the entire license notice for the
- *  JavaScript code in http://thomasf.github.io/solarized-css/org-info.min.js.
+ *  JavaScript code in ../_css/_org-info.min.js.
  *
  * Copyright (C) 2012-2019 Free Software Foundation, Inc.
  *
@@ -221,7 +221,7 @@
  * through which recipients can access the Corresponding Source.
  *
  * @licend  The above is the entire license notice
- * for the JavaScript code in http://thomasf.github.io/solarized-css/org-info.min.js.
+ * for the JavaScript code in ../_css/_org-info.min.js.
  *
  */
 </script>
@@ -254,7 +254,7 @@ for the JavaScript code in this tag.
 */
 
 <!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "999");
+org_html_manager.set("TOC_DEPTH", "4");
 org_html_manager.set("LINK_HOME", "");
 org_html_manager.set("LINK_UP", "");
 org_html_manager.set("LOCAL_TOC", "1");
@@ -320,220 +320,164 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge13725f">1. Installation</a></li>
-<li><a href="#org9d9d877">2. Usage</a>
+<li><a href="#org1c539ab">1. Installation</a></li>
+<li><a href="#org45d7453">2. Usage</a>
 <ul>
-<li><a href="#org8926bf0">2.1. Bash</a>
+<li><a href="#org405b382">2.1. Bash</a>
 <ul>
-<li><a href="#orgff9f465">2.1.1. Basic Commands</a>
+<li><a href="#org4c5ac4f">2.1.1. Basic Commands</a>
 <ul>
-<li><a href="#org57308a8">2.1.1.1. Navigate file structure</a>
-<ul>
-<li><a href="#org0016cc7">2.1.1.1.1. ls  (list files in directory)</a></li>
-<li><a href="#org2e3f363">2.1.1.1.2. cd  (change directory)</a></li>
-<li><a href="#orgf686f26">2.1.1.1.3. clear (clear terminal display)</a></li>
-<li><a href="#orgb28a61f">2.1.1.1.4. find (find stuff)</a></li>
+<li><a href="#orgb1b2bfe">2.1.1.1. Navigate file structure</a></li>
+<li><a href="#org93c7b99">2.1.1.2. Mutate file structure</a></li>
+<li><a href="#org1973002">2.1.1.3. bash vars</a></li>
+<li><a href="#org47d3275">2.1.1.4. text utilities</a></li>
+<li><a href="#orgb3a9d7b">2.1.1.5. Network management</a></li>
+<li><a href="#org0b9fbbc">2.1.1.6. permissions management</a></li>
 </ul>
 </li>
-<li><a href="#org242dbfb">2.1.1.2. Mutate file structure</a>
-<ul>
-<li><a href="#org4acfd8d">2.1.1.2.1. mv  (move file)</a></li>
-<li><a href="#orgce0fc31">2.1.1.2.2. cp  (copy)</a></li>
-<li><a href="#org1956801">2.1.1.2.3. rm  (remove)</a></li>
-<li><a href="#org899598a">2.1.1.2.4. ln  (link)</a></li>
+<li><a href="#org7959dca">2.1.2. Pipes, i.e. Linux-DuctTape , and more bash syntax</a></li>
+<li><a href="#org372dc11">2.1.3. WildCards / Patterns</a></li>
+<li><a href="#org0f53ed6">2.1.4. Path variables</a></li>
+<li><a href="#org1ef3a46">2.1.5. Configuration Files</a></li>
+<li><a href="#org9501c84">2.1.6. Scripts</a></li>
 </ul>
 </li>
-<li><a href="#org87f6eb2">2.1.1.3. bash vars</a>
+<li><a href="#orgd7178fd">2.2. File Structure</a>
 <ul>
-<li><a href="#org674f66c">2.1.1.3.1. export (export a variable to the environment ( used for PATH a lot))</a></li>
-<li><a href="#orgf5ee6ac">2.1.1.3.2. alias (create an alias for a bash expression)</a></li>
+<li><a href="#org835e8cc">2.2.1. /</a></li>
+<li><a href="#org6dba295">2.2.2. /dev</a></li>
+<li><a href="#orgfb38eea">2.2.3. /etc</a></li>
+<li><a href="#org4c1330e">2.2.4. /opt</a></li>
+<li><a href="#orgb0c69ba">2.2.5. /usr</a>
+<ul>
+<li><a href="#org1d490a3">2.2.5.1. /bin</a></li>
+<li><a href="#org5888f8c">2.2.5.2. /lib</a></li>
+<li><a href="#org4d4f4ba">2.2.5.3. /include</a></li>
 </ul>
 </li>
-<li><a href="#org9fdc954">2.1.1.4. text utilities</a>
+<li><a href="#org0b5e3ef">2.2.6. /usr/local</a>
 <ul>
-<li><a href="#org0435879">2.1.1.4.1. grep (regex search through text)</a></li>
-<li><a href="#org562f036">2.1.1.4.2. wc ( word line char count)</a></li>
-</ul>
-</li>
-<li><a href="#orgacbbbf3">2.1.1.5. Network management</a>
-<ul>
-<li><a href="#orgd9d6a35">2.1.1.5.1. ip (networking information, and configuration)</a></li>
-</ul>
-</li>
-<li><a href="#orgb7271a0">2.1.1.6. permissions management</a>
-<ul>
-<li><a href="#org6a938f4">2.1.1.6.1. su (switch user (default is root))</a></li>
-<li><a href="#org090a9f1">2.1.1.6.2. sudo (execute command with root privileges)</a></li>
-<li><a href="#org75cbc80">2.1.1.6.3. adduser ( user profile management (create users, add them to groups, etc)</a></li>
-<li><a href="#org5301350">2.1.1.6.4. chmod  (modify file ownership)</a></li>
+<li><a href="#org75bde6d">2.2.6.1. tldr /bin /lib /include</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgde4c4fd">2.1.2. Pipes, i.e. Linux-DuctTape , and more bash syntax</a></li>
-<li><a href="#orgea89b4e">2.1.3. WildCards / Patterns</a></li>
-<li><a href="#orgcadde3b">2.1.4. Path variables</a></li>
-<li><a href="#orgc176eb8">2.1.5. Configuration Files</a></li>
-<li><a href="#org77031eb">2.1.6. Scripts</a></li>
-</ul>
-</li>
-<li><a href="#orgeb51e96">2.2. File Structure</a>
-<ul>
-<li><a href="#orgaee152f">2.2.1. /</a></li>
-<li><a href="#orgc54d34c">2.2.2. /dev</a></li>
-<li><a href="#orgba81cb9">2.2.3. /etc</a></li>
-<li><a href="#org75f9a72">2.2.4. /opt</a></li>
-<li><a href="#org92327df">2.2.5. /usr</a>
-<ul>
-<li><a href="#org558a2bb">2.2.5.1. /bin</a></li>
-<li><a href="#org42b65f8">2.2.5.2. /lib</a></li>
-<li><a href="#org9ee01b8">2.2.5.3. /include</a></li>
-</ul>
-</li>
-<li><a href="#org3d5a4e7">2.2.6. /usr/local</a>
-<ul>
-<li><a href="#org4d9e638">2.2.6.1. tldr /bin /lib /include</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org834c6d3">2.3. Users , Permissions</a></li>
+<li><a href="#orgbaab352">2.3. Users , Permissions</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge13725f" class="outline-2">
-<h2 id="orge13725f"><span class="section-number-2">1</span> Installation</h2>
+<div id="outline-container-org1c539ab" class="outline-2">
+<h2 id="org1c539ab"><span class="section-number-2">1</span> Installation</h2>
 </div>
-<div id="outline-container-org9d9d877" class="outline-2">
-<h2 id="org9d9d877"><span class="section-number-2">2</span> Usage</h2>
+<div id="outline-container-org45d7453" class="outline-2">
+<h2 id="org45d7453"><span class="section-number-2">2</span> Usage</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org8926bf0" class="outline-3">
-<h3 id="org8926bf0"><span class="section-number-3">2.1</span> Bash</h3>
+<div id="outline-container-org405b382" class="outline-3">
+<h3 id="org405b382"><span class="section-number-3">2.1</span> Bash</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-orgff9f465" class="outline-4">
-<h4 id="orgff9f465"><span class="section-number-4">2.1.1</span> Basic Commands</h4>
+<div id="outline-container-org4c5ac4f" class="outline-4">
+<h4 id="org4c5ac4f"><span class="section-number-4">2.1.1</span> Basic Commands</h4>
 <div class="outline-text-4" id="text-2-1-1">
 </div>
-<div id="outline-container-org57308a8" class="outline-5">
-<h5 id="org57308a8"><span class="section-number-5">2.1.1.1</span> Navigate file structure</h5>
+<div id="outline-container-orgb1b2bfe" class="outline-5">
+<h5 id="orgb1b2bfe"><span class="section-number-5">2.1.1.1</span> Navigate file structure</h5>
 <div class="outline-text-5" id="text-2-1-1-1">
 </div>
-<div id="outline-container-org0016cc7" class="outline-6">
-<h6 id="org0016cc7"><span class="section-number-6">2.1.1.1.1</span> ls  (list files in directory)</h6>
+<ol class="org-ol">
+<li><a id="org43c3ec3"></a>ls  (list files in directory)<br />
 <div class="outline-text-6" id="text-2-1-1-1-1">
 <div class="org-src-container">
 <pre class="src src-shell">ls 
 </pre>
 </div>
 </div>
+</li>
+<li><a id="org8bc5983"></a>cd  (change directory)<br /></li>
+<li><a id="orgc19a1a2"></a>clear (clear terminal display)<br /></li>
+<li><a id="org7821d40"></a>find (find stuff)<br /></li>
+</ol>
 </div>
-<div id="outline-container-org2e3f363" class="outline-6">
-<h6 id="org2e3f363"><span class="section-number-6">2.1.1.1.2</span> cd  (change directory)</h6>
-</div>
-<div id="outline-container-orgf686f26" class="outline-6">
-<h6 id="orgf686f26"><span class="section-number-6">2.1.1.1.3</span> clear (clear terminal display)</h6>
-</div>
-<div id="outline-container-orgb28a61f" class="outline-6">
-<h6 id="orgb28a61f"><span class="section-number-6">2.1.1.1.4</span> find (find stuff)</h6>
-</div>
-</div>
-<div id="outline-container-org242dbfb" class="outline-5">
-<h5 id="org242dbfb"><span class="section-number-5">2.1.1.2</span> Mutate file structure</h5>
+<div id="outline-container-org93c7b99" class="outline-5">
+<h5 id="org93c7b99"><span class="section-number-5">2.1.1.2</span> Mutate file structure</h5>
 <div class="outline-text-5" id="text-2-1-1-2">
 </div>
-<div id="outline-container-org4acfd8d" class="outline-6">
-<h6 id="org4acfd8d"><span class="section-number-6">2.1.1.2.1</span> mv  (move file)</h6>
+<ol class="org-ol">
+<li><a id="org582c961"></a>mv  (move file)<br /></li>
+<li><a id="org8b6a5ca"></a>cp  (copy)<br /></li>
+<li><a id="orgd4220ea"></a>rm  (remove)<br /></li>
+<li><a id="org6d8e24e"></a>ln  (link)<br /></li>
+</ol>
 </div>
-<div id="outline-container-orgce0fc31" class="outline-6">
-<h6 id="orgce0fc31"><span class="section-number-6">2.1.1.2.2</span> cp  (copy)</h6>
-</div>
-<div id="outline-container-org1956801" class="outline-6">
-<h6 id="org1956801"><span class="section-number-6">2.1.1.2.3</span> rm  (remove)</h6>
-</div>
-<div id="outline-container-org899598a" class="outline-6">
-<h6 id="org899598a"><span class="section-number-6">2.1.1.2.4</span> ln  (link)</h6>
-</div>
-</div>
-<div id="outline-container-org87f6eb2" class="outline-5">
-<h5 id="org87f6eb2"><span class="section-number-5">2.1.1.3</span> bash vars</h5>
+<div id="outline-container-org1973002" class="outline-5">
+<h5 id="org1973002"><span class="section-number-5">2.1.1.3</span> bash vars</h5>
 <div class="outline-text-5" id="text-2-1-1-3">
 </div>
-<div id="outline-container-org674f66c" class="outline-6">
-<h6 id="org674f66c"><span class="section-number-6">2.1.1.3.1</span> export (export a variable to the environment ( used for PATH a lot))</h6>
+<ol class="org-ol">
+<li><a id="org1cb9759"></a>export (export a variable to the environment ( used for PATH a lot))<br /></li>
+<li><a id="org77e35b8"></a>alias (create an alias for a bash expression)<br /></li>
+</ol>
 </div>
-<div id="outline-container-orgf5ee6ac" class="outline-6">
-<h6 id="orgf5ee6ac"><span class="section-number-6">2.1.1.3.2</span> alias (create an alias for a bash expression)</h6>
-</div>
-</div>
-<div id="outline-container-org9fdc954" class="outline-5">
-<h5 id="org9fdc954"><span class="section-number-5">2.1.1.4</span> text utilities</h5>
+<div id="outline-container-org47d3275" class="outline-5">
+<h5 id="org47d3275"><span class="section-number-5">2.1.1.4</span> text utilities</h5>
 <div class="outline-text-5" id="text-2-1-1-4">
 </div>
-<div id="outline-container-org0435879" class="outline-6">
-<h6 id="org0435879"><span class="section-number-6">2.1.1.4.1</span> grep (regex search through text)</h6>
-</div>
-<div id="outline-container-org562f036" class="outline-6">
-<h6 id="org562f036"><span class="section-number-6">2.1.1.4.2</span> wc ( word line char count)</h6>
-</div>
+<ol class="org-ol">
+<li><a id="orgc85f37d"></a>grep (regex search through text)<br /></li>
+<li><a id="orgf46a1d9"></a>wc ( word line char count)<br /></li>
+</ol>
 </div>
 
-<div id="outline-container-orgacbbbf3" class="outline-5">
-<h5 id="orgacbbbf3"><span class="section-number-5">2.1.1.5</span> Network management</h5>
+<div id="outline-container-orgb3a9d7b" class="outline-5">
+<h5 id="orgb3a9d7b"><span class="section-number-5">2.1.1.5</span> Network management</h5>
 <div class="outline-text-5" id="text-2-1-1-5">
 </div>
-<div id="outline-container-orgd9d6a35" class="outline-6">
-<h6 id="orgd9d6a35"><span class="section-number-6">2.1.1.5.1</span> ip (networking information, and configuration)</h6>
+<ol class="org-ol">
+<li><a id="orgc0c753e"></a>ip (networking information, and configuration)<br /></li>
+</ol>
 </div>
-</div>
-<div id="outline-container-orgb7271a0" class="outline-5">
-<h5 id="orgb7271a0"><span class="section-number-5">2.1.1.6</span> permissions management</h5>
+<div id="outline-container-org0b9fbbc" class="outline-5">
+<h5 id="org0b9fbbc"><span class="section-number-5">2.1.1.6</span> permissions management</h5>
 <div class="outline-text-5" id="text-2-1-1-6">
 </div>
-<div id="outline-container-org6a938f4" class="outline-6">
-<h6 id="org6a938f4"><span class="section-number-6">2.1.1.6.1</span> su (switch user (default is root))</h6>
-</div>
-<div id="outline-container-org090a9f1" class="outline-6">
-<h6 id="org090a9f1"><span class="section-number-6">2.1.1.6.2</span> sudo (execute command with root privileges)</h6>
-</div>
-<div id="outline-container-org75cbc80" class="outline-6">
-<h6 id="org75cbc80"><span class="section-number-6">2.1.1.6.3</span> adduser ( user profile management (create users, add them to groups, etc)</h6>
-</div>
-<div id="outline-container-org5301350" class="outline-6">
-<h6 id="org5301350"><span class="section-number-6">2.1.1.6.4</span> chmod  (modify file ownership)</h6>
-</div>
+<ol class="org-ol">
+<li><a id="org8ae896e"></a>su (switch user (default is root))<br /></li>
+<li><a id="org508a95a"></a>sudo (execute command with root privileges)<br /></li>
+<li><a id="org95105af"></a>adduser ( user profile management (create users, add them to groups, etc)<br /></li>
+<li><a id="org51952a8"></a>chmod  (modify file ownership)<br /></li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-orgde4c4fd" class="outline-4">
-<h4 id="orgde4c4fd"><span class="section-number-4">2.1.2</span> Pipes, i.e. Linux-DuctTape , and more bash syntax</h4>
+<div id="outline-container-org7959dca" class="outline-4">
+<h4 id="org7959dca"><span class="section-number-4">2.1.2</span> Pipes, i.e. Linux-DuctTape , and more bash syntax</h4>
 </div>
-<div id="outline-container-orgea89b4e" class="outline-4">
-<h4 id="orgea89b4e"><span class="section-number-4">2.1.3</span> WildCards / Patterns</h4>
+<div id="outline-container-org372dc11" class="outline-4">
+<h4 id="org372dc11"><span class="section-number-4">2.1.3</span> WildCards / Patterns</h4>
 </div>
-<div id="outline-container-orgcadde3b" class="outline-4">
-<h4 id="orgcadde3b"><span class="section-number-4">2.1.4</span> Path variables</h4>
+<div id="outline-container-org0f53ed6" class="outline-4">
+<h4 id="org0f53ed6"><span class="section-number-4">2.1.4</span> Path variables</h4>
 </div>
-<div id="outline-container-orgc176eb8" class="outline-4">
-<h4 id="orgc176eb8"><span class="section-number-4">2.1.5</span> Configuration Files</h4>
+<div id="outline-container-org1ef3a46" class="outline-4">
+<h4 id="org1ef3a46"><span class="section-number-4">2.1.5</span> Configuration Files</h4>
 </div>
-<div id="outline-container-org77031eb" class="outline-4">
-<h4 id="org77031eb"><span class="section-number-4">2.1.6</span> Scripts</h4>
+<div id="outline-container-org9501c84" class="outline-4">
+<h4 id="org9501c84"><span class="section-number-4">2.1.6</span> Scripts</h4>
 </div>
 </div>
-<div id="outline-container-orgeb51e96" class="outline-3">
-<h3 id="orgeb51e96"><span class="section-number-3">2.2</span> File Structure</h3>
+<div id="outline-container-orgd7178fd" class="outline-3">
+<h3 id="orgd7178fd"><span class="section-number-3">2.2</span> File Structure</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 A grand tour of who's who in the linux file system 
 </p>
 </div>
-<div id="outline-container-orgaee152f" class="outline-4">
-<h4 id="orgaee152f"><span class="section-number-4">2.2.1</span> /</h4>
+<div id="outline-container-org835e8cc" class="outline-4">
+<h4 id="org835e8cc"><span class="section-number-4">2.2.1</span> /</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 Contains everything , don't do 
@@ -544,8 +488,8 @@ Contains everything , don't do
 </div>
 </div>
 </div>
-<div id="outline-container-orgc54d34c" class="outline-4">
-<h4 id="orgc54d34c"><span class="section-number-4">2.2.2</span> /dev</h4>
+<div id="outline-container-org6dba295" class="outline-4">
+<h4 id="org6dba295"><span class="section-number-4">2.2.2</span> /dev</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 Contains device and io files, your usb devices, serial connections, spi connections communicate with linux through these. Might need to play around with permissions here on occasion
@@ -553,8 +497,8 @@ the vaunted stdout/stdin files live here
 </p>
 </div>
 </div>
-<div id="outline-container-orgba81cb9" class="outline-4">
-<h4 id="orgba81cb9"><span class="section-number-4">2.2.3</span> /etc</h4>
+<div id="outline-container-orgfb38eea" class="outline-4">
+<h4 id="orgfb38eea"><span class="section-number-4">2.2.3</span> /etc</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <p>
 Contains system configuration files 
@@ -562,39 +506,39 @@ Contains system configuration files
 </p>
 </div>
 </div>
-<div id="outline-container-org75f9a72" class="outline-4">
-<h4 id="org75f9a72"><span class="section-number-4">2.2.4</span> /opt</h4>
+<div id="outline-container-org4c1330e" class="outline-4">
+<h4 id="org4c1330e"><span class="section-number-4">2.2.4</span> /opt</h4>
 <div class="outline-text-4" id="text-2-2-4">
 <p>
 Ros lives here once installed. opt is kind of like an appendix. most user software is installed in /usr/local{/share}
 </p>
 </div>
 </div>
-<div id="outline-container-org92327df" class="outline-4">
-<h4 id="org92327df"><span class="section-number-4">2.2.5</span> /usr</h4>
+<div id="outline-container-orgb0c69ba" class="outline-4">
+<h4 id="orgb0c69ba"><span class="section-number-4">2.2.5</span> /usr</h4>
 <div class="outline-text-4" id="text-2-2-5">
 <p>
 most system software , your linux utilities, c++ stl headers, etc live here
 </p>
 </div>
-<div id="outline-container-org558a2bb" class="outline-5">
-<h5 id="org558a2bb"><span class="section-number-5">2.2.5.1</span> /bin</h5>
+<div id="outline-container-org1d490a3" class="outline-5">
+<h5 id="org1d490a3"><span class="section-number-5">2.2.5.1</span> /bin</h5>
 <div class="outline-text-5" id="text-2-2-5-1">
 <p>
 where the executables live
 </p>
 </div>
 </div>
-<div id="outline-container-org42b65f8" class="outline-5">
-<h5 id="org42b65f8"><span class="section-number-5">2.2.5.2</span> /lib</h5>
+<div id="outline-container-org5888f8c" class="outline-5">
+<h5 id="org5888f8c"><span class="section-number-5">2.2.5.2</span> /lib</h5>
 <div class="outline-text-5" id="text-2-2-5-2">
 <p>
 where the linkables live
 </p>
 </div>
 </div>
-<div id="outline-container-org9ee01b8" class="outline-5">
-<h5 id="org9ee01b8"><span class="section-number-5">2.2.5.3</span> /include</h5>
+<div id="outline-container-org4d4f4ba" class="outline-5">
+<h5 id="org4d4f4ba"><span class="section-number-5">2.2.5.3</span> /include</h5>
 <div class="outline-text-5" id="text-2-2-5-3">
 <p>
 where the headers lives 
@@ -603,27 +547,27 @@ where the headers lives
 </div>
 </div>
 
-<div id="outline-container-org3d5a4e7" class="outline-4">
-<h4 id="org3d5a4e7"><span class="section-number-4">2.2.6</span> /usr/local</h4>
+<div id="outline-container-org0b5e3ef" class="outline-4">
+<h4 id="org0b5e3ef"><span class="section-number-4">2.2.6</span> /usr/local</h4>
 <div class="outline-text-4" id="text-2-2-6">
 <p>
 Where globally available user-level software lives ( in theory ) 
 </p>
 </div>
-<div id="outline-container-org4d9e638" class="outline-5">
-<h5 id="org4d9e638"><span class="section-number-5">2.2.6.1</span> tldr /bin /lib /include</h5>
+<div id="outline-container-org75bde6d" class="outline-5">
+<h5 id="org75bde6d"><span class="section-number-5">2.2.6.1</span> tldr /bin /lib /include</h5>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org834c6d3" class="outline-3">
-<h3 id="org834c6d3"><span class="section-number-3">2.3</span> Users , Permissions</h3>
+<div id="outline-container-orgbaab352" class="outline-3">
+<h3 id="orgbaab352"><span class="section-number-3">2.3</span> Users , Permissions</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: 2019 Software Team</p>
-<p class="date">Created: 2019-04-27 Sat 15:40</p>
+<p class="date">Created: 2019-05-03 Fri 13:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
