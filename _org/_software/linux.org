@@ -1,5 +1,5 @@
-#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:../_css/_org-info.min.js
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../_css/solarized-css/solarized-dark.min.css" />
 #+TITLE: Learn Linux because -i sed so 
 #+AUTHOR: 2019 Software Team 
 #+OPTION: TEX: t
